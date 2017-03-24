@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI,CACF,gBAAgB,CAAE,IAAI,CACtB,SAAS,CAAC,IAAI",
+"sources": ["../scss/amp.scss"],
+"names": [],
+"file": "amp.css"
+}
