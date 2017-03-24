@@ -6,15 +6,10 @@
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
 
-    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async=""></script>
-
-
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <link rel="canonical" href="https://ampbyexample.com/samples_templates/product_listing/">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -36,7 +31,7 @@
         }
 
 
-
+        .amp-carousel-button { display: none }
 
         amp-carousel {
             margin: 0;
@@ -56,10 +51,14 @@
             text-align: center;
             top: 0;
             width: 100%;
+            height:60px;
+            line-height: 60px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #333;
         }
         .header-item-logo:before {
             content: '\E62B';
-            font-size: 24px;
+            font-size: 30px;
             width: 24px;
             height: 24px;
             display: inline-block;
@@ -74,15 +73,22 @@
         }
         .ampstart-navbar-trigger {
             color: #fff;
-            left: 5px;
+            left: 0px;
             line-height: 1;
             position: absolute;
-            top: 5px;
+            top: 0px;
+            font-size: 22px;
+            width: 60px;
+            height: 60px;
+            border-right:1px solid #333;
+            line-height: 60px;
+            text-align: center;
         }
+
         .ampstart-sidebar {
             background-color: #000;
             color: #fff;
-            padding: 38px 0 0;
+            margin: 61px 0 0;
             width: 100%;
         }
         .ampstart-sidebar header {
@@ -137,6 +143,15 @@
         }
 
 
+        
+        .header-ticker a{
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+            line-height: 35px;
+        }
 
 
 
@@ -148,7 +163,7 @@
         }
 
         .main{
-            padding-top: 60px;
+            padding-top: 61px;
         }
 
         .main__bc__list{
@@ -170,43 +185,67 @@
             text-decoration: none;
         }
 
+        .main__bc__item > a:after{
+            font-family: FontAwesome;
+            content: '\f105';
+            margin-left: 5px;
+        }
+
 
         .main__ttl{
-            padding:0 10px;
-            font-size:14px;
+            font-size:16px;
             text-align: left;
-            color: #000;
+            color: #9a9b9b;
             line-height: 1.25;
-            padding: 0px 20px 12px;
-            margin: 0;
+            padding: 20px 20px 17px;
+            margin: 0 0 10px;
             display: inline-block;
             width: 100%;
             box-sizing: border-box;
+            background-color: #363738;
         }
 
         .main__other__btn__wrap{
             margin:10px 20px;
+            font-size: 0;
         }
 
         .main__other__btn{
             background-color: #fff;
             vertical-align: top;
             position: relative;
-            height: 25px;
+            height: 35px;
             border: 1px solid #c8cbcc;
-            text-align: right;
-            padding: 5px 24px 6px 7px;
+            width: 48%;
+            display: inline-block;
+            box-sizing: border-box;
+            margin:0 1%;
+        }
+
+        .main__other__btn > a{
             font-size: 12px;
-            font-weight: 400;
-            line-height: 1.25;
-            margin-right: 8px;
+            line-height: 34px;
             color: #616363;
             white-space: nowrap;
             font-size:12px;
-            display: inline-block;
-            box-sizing: border-box;
+            text-align: center;
+            text-decoration: none;
+            display: block;
         }
 
+        .main__other__btn > a:before{
+            font-family: FontAwesome;
+            margin-right:  7px;
+            font-size: 15px;
+        }
+
+        .main__other__btn.filter > a:before{
+            content: '\f1de';
+        }
+
+        .main__other__btn.sort > a:before{
+            content: '\f0dc';
+        }
         .main__pdts__list{
 
         }
@@ -267,8 +306,10 @@
             display: block;
         }
 
-        .main__view__more:after{
-
+        .main__view__more > a:after{
+            font-family: FontAwesome;
+            content: '\f105';
+            padding-left: 10px;
         }
 
         .tile {
@@ -321,6 +362,15 @@
             max-height: 30%;
             font-weight: 300;
         }
+
+        .footer{
+            padding:10px 0;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            font-size: 11px;
+            text-align: center;
+        }
     </style>
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -344,8 +394,15 @@
                     <section>
                         <header>MEN</header>
                         <ul class="ampstart-dropdown">
-                            <li><a href="#">Styling Tips</a></li>
-                            <li><a href="#">Designers</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">すべて見る</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">新着アイテム</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">シューズ</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">アパレル</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">アクセサリー</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">スポーツ</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">Originals</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">スタイル</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">コレクション</a></li>
                         </ul>
                     </section>
                 </amp-accordion>
@@ -355,8 +412,15 @@
                     <section>
                         <header>LADIES</header>
                         <ul class="ampstart-dropdown">
-                            <li><a href="#">Styling Tips</a></li>
-                            <li><a href="#">Designers</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">すべて見る</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">新着アイテム</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">シューズ</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">アパレル</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">アクセサリー</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">スポーツ</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">Originals</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">スタイル</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">コレクション</a></li>
                         </ul>
                     </section>
                 </amp-accordion>
@@ -366,8 +430,15 @@
                     <section>
                         <header>KIDS</header>
                         <ul class="ampstart-dropdown">
-                            <li><a href="#">Styling Tips</a></li>
-                            <li><a href="#">Designers</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">すべて見る</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">新着アイテム</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">シューズ</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">アパレル</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">アクセサリー</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">スポーツ</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">Originals</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">スタイル</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">コレクション</a></li>
                         </ul>
                     </section>
                 </amp-accordion>
@@ -377,8 +448,11 @@
                     <section>
                         <header>カスタマイズ</header>
                         <ul class="ampstart-dropdown">
-                            <li><a href="#">Styling Tips</a></li>
-                            <li><a href="#">Designers</a></li>
+                            <li><a href="https://shop.adidsa.jp/miadidas/?f=srchitem">MI ADIDAS とは</a></li>
+                            <li><a href="https://shop.adidsa.jp/item/?gendId=m&amp;mi=1&amp;f=srchitem">メンズ</a></li>
+                            <li><a href="https://shop.adidsa.jp/item/?gendId=f&amp;mi=1&amp;f=srchitem">レディース</a></li>
+                            <li><a href="https://shop.adidsa.jp/originals/?mi=1">Originals</a></li>
+                            <li><a href="https://shop.adidsa.jp/item/?brand_code=111&amp;mi=1">スポーツ</a></li>
                         </ul>
                     </section>
                 </amp-accordion>
@@ -388,8 +462,15 @@
                     <section>
                         <header>SPORTS</header>
                         <ul class="ampstart-dropdown">
-                            <li><a href="#">Styling Tips</a></li>
-                            <li><a href="#">Designers</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">すべて見る</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">新着アイテム</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">シューズ</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">アパレル</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">アクセサリー</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">スポーツ</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">Originals</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">スタイル</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">コレクション</a></li>
                         </ul>
                     </section>
                 </amp-accordion>
@@ -399,8 +480,15 @@
                     <section>
                         <header>BRANDS</header>
                         <ul class="ampstart-dropdown">
-                            <li><a href="#">Styling Tips</a></li>
-                            <li><a href="#">Designers</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">すべて見る</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">新着アイテム</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">シューズ</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">アパレル</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">アクセサリー</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">スポーツ</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">Originals</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">スタイル</a></li>
+                            <li><a href="https://shop.adidas.jp/item/">コレクション</a></li>
                         </ul>
                     </section>
                 </amp-accordion>
@@ -408,21 +496,30 @@
         </ul>
     </nav>
 
-    <ul class="ampstart-sidebar-tool">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
+    <!--<ul class="ampstart-sidebar-tool">-->
+        <!--<li><a href="#">About</a></li>-->
+        <!--<li><a href="#">Contact</a></li>-->
+    <!--</ul>-->
 
 
 </amp-sidebar>
 <!-- End Sidebar -->
 <!-- End Navbar -->
 
+
+
 <div class="main">
-    <ul class="main__bc__list">
-        <li class="main__bc__item"><a href="">TOP</a></li>
-        <li class="main__bc__item"><a href="">メンズ</a></li>
-    </ul>
+    <amp-carousel width="400"
+                  height="35"
+                  layout="responsive"
+                  type="slides"
+                  autoplay
+                  class="header-ticker"
+                  delay="3000">
+        <p><a href="#">informatin 01</a></p>
+        <p><a href="#">informatin 02</a></p>
+        <p><a href="#">informatin 03</a></p>
+    </amp-carousel>
 
     <h2 class="main__ttl font-AH">アディダス メンズ Originals</h2>
 
@@ -442,30 +539,31 @@
     <!--</amp-carousel>-->
     <div class="main__other__btn__wrap">
 
-        <form method="post"
-              action-xhr="https://ampbyexample.com/components/amp-form/submit-form-xhr" target="_top" class="p2">
-            <div class="">
-                <select name="sort" id="sort" >
-                    <option value="shoes">シューズ</option>
-                    <option value="app">アパレル</option>
-                    <option value="running">ランニング</option>
-                    <option value="eqt">eqt</option>
-                </select>
-                <label for="sort" class="main__other__btn">条件を絞る</label>
-            </div>
-        </form>
-        <form method="post"
-              action-xhr="https://ampbyexample.com/components/amp-form/submit-form-xhr" target="_top" class="p2">
-            <div class="">
-                <select name="filter" id="filter" >
-                    <option value="new">新着順</option>
-                    <option value="fav">人気順</option>
-                    <option value="low">金額が安い順</option>
-                    <option value="high">金額が高い順</option>
-                </select>
-                <label for="filter" class="main__other__btn">順番を変更する</label>
-            </div>
-        </form>
+        <div class="main__other__btn filter"><a href="https://shop.adidas.jp/item/">さらに絞り込む</a></div>
+        <!--<form method="post"-->
+              <!--action-xhr="https://ampbyexample.com/components/amp-form/submit-form-xhr" target="_top" class="p2">-->
+            <!--<div class="">-->
+                <!--<select name="sort" id="sort" >-->
+                    <!--<option value="shoes">シューズ</option>-->
+                    <!--<option value="app">アパレル</option>-->
+                    <!--<option value="running">ランニング</option>-->
+                    <!--<option value="eqt">eqt</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</form>-->
+
+        <div class="main__other__btn sort"><a href="https://sshop.adidas.jp/item/">並び替え</a></div>
+        <!--<form method="post"-->
+              <!--action-xhr="https://ampbyexample.com/components/amp-form/submit-form-xhr" target="_top" class="p2">-->
+            <!--<div class="">-->
+                <!--<select name="filter" id="filter" >-->
+                    <!--<option value="new">新着順</option>-->
+                    <!--<option value="fav">人気順</option>-->
+                    <!--<option value="low">金額が安い順</option>-->
+                    <!--<option value="high">金額が高い順</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</form>-->
     </div>
     <div class="items font-AH main__pdts__list">
 
@@ -754,25 +852,29 @@
 
 
 
-    <amp-analytics type="googleanalytics">
-        <script type="application/json">
-            {
-                "vars": {
-                    "account": "UA-80609902-1"
-                },
-                "triggers": {
-                    "default pageview": {
-                        "on": "visible",
-                        "request": "pageview",
-                        "vars": {
-                            "title": "{{title}}"
-                        }
-                    }
-                }
-            }
-        </script>
-    </amp-analytics>
+    <!--<amp-analytics type="googleanalytics">-->
+        <!--<script type="application/json">-->
+            <!--{-->
+                <!--"vars": {-->
+                    <!--"account": "UA-80609902-1"-->
+                <!--},-->
+                <!--"triggers": {-->
+                    <!--"default pageview": {-->
+                        <!--"on": "visible",-->
+                        <!--"request": "pageview",-->
+                        <!--"vars": {-->
+                            <!--"title": "{{title}}"-->
+                        <!--}-->
+                    <!--}-->
+                <!--}-->
+            <!--}-->
+        <!--</script>-->
+    <!--</amp-analytics>-->
 
 </div><!--main-->
+
+<div class="footer">
+    © 2017 adidas Japan K.K.
+</div>
 </body>
 </html>
