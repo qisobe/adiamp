@@ -47,6 +47,25 @@
             margin-bottom: 20px;
             list-style: none;
         }
+        @font-face {
+            font-family: 'icomoon';
+            src: url('/adiamp/fonts/icomoon.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        [class^="icomoon-"], [class*=" icomoon-"],
+        [class*="icon_"]:before {
+            font-family: 'icomoon';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+        }
+        .icon_prev_line:before {
+            content: "\e911";
+        }
     </style>
 </head>
 <body>
@@ -60,6 +79,7 @@
 <p class="font-ANB">tanabe2</p>
 <h1 class="font-ANP">Welcome to the mobile web</h1>
 <p class="font-ANP_black">hirayama2</p>
+<span class="icon_prev_line">戻る</span>>
 <amp-sidebar id="sidebar"
              layout="nodisplay"
              side="right">
