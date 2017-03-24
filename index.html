@@ -1,36 +1,778 @@
+
+
 <!doctype html>
-<html amp lang="en">
+<html ⚡>
 <head>
     <meta charset="utf-8">
-    <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "NewsArticle",
-        "headline": "Open-source framework for publishing content",
-        "datePublished": "2015-10-07T12:02:41Z",
-        "image": [
-          "logo.jpg"
-        ]
-      }
-    </script>
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <style amp-custom>
-        /*header*/
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
 
-        body{background-color:#f00;font-size:20px}
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async=""></script>
+
+
+    <link rel="canonical" href="https://ampbyexample.com/samples_templates/product_listing/">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+        @font-face{font-family:'adiNeueBold';font-weight:normal;font-style:normal;src:url("/adiamp/fonts/adineue-bold-webfont.ttf") format("truetype")}@font-face{font-family:'AdiHaus';font-weight:normal;font-style:normal;src:url("/adiamp/fonts/AdiHaus-Regular.ttf") format("truetype")}@font-face{font-family:'AdiHaus';font-weight:bold;font-style:normal;src:url("/adiamp/fonts/AdiHaus-Bold.ttf") format("truetype")}@font-face{font-family:'AdiHaus';font-weight:normal;font-style:italic;src:url("/adiamp/fonts/AdiHaus-Italic.ttf") format("truetype")}@font-face{font-family:'AdiHaus';font-weight:bold;font-style:italic;src:url("/adiamp/fonts/AdiHaus-BoldItalic.ttf") format("truetype")}@font-face{font-family:'adineue_proregular';src:url("/adiamp/fonts/adineuepro-regular-webfont.ttf") format("truetype");font-weight:400;font-style:normal}@font-face{font-family:'adineue_pro_blackregular';src:url("/adiamp/fonts/adineuepro-black-webfont.ttf") format("truetype");font-weight:400;font-style:normal}@font-face{font-family:'adineue_pro_boldregular';src:url("/adiamp/fonts/adineuepro-bold-webfont.ttf") format("truetype");font-weight:400;font-style:normal}@font-face{font-family:'adineue_pro_lightregular';src:url("/adiamp/fonts/adineuepro-light-webfont.ttf") format("truetype");font-weight:400;font-style:normal}@font-face{font-family:'adihausDIN-regular-italic-cond';src:url("/adiamp/fonts/AdihausDIN-CondIta.ttf") format("truetype");font-weight:400;font-style:normal}body{font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif}.font-ANB{font-family:"adiNeueBold","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif}.font-AH{font-family:"AdiHaus","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif}.font-ANP{font-family:"adineue_proregular","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif}.font-ANP_black{font-family:"adineue_pro_blackregular","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif}.font-ANP_bold{font-family:"adineue_pro_boldregular","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif}.font-ANP_light{font-family:"adineue_pro_lightregular","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif}.font-AHD{font-family:"adihausDIN-regular-italic-cond","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif}
+
+        article#preview {
+            background: #ECEFF1;
+        }
+
+        article#preview {
+            background-color: #f5f5f5;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both
+        }
+
+
+
+
+        amp-carousel {
+            margin: 0;
+        }
+
+
+        @font-face {
+            font-family: 'adiPictoRegular';
+            src: url('fonts/adipictos-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .ampstart-headerbar {
+            background-color: #000;
+            padding: 8px 0 2px;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: 100%;
+        }
+        .header-item-logo:before {
+            content: '\E62B';
+            font-size: 24px;
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            color: #fff;
+            font-family: 'adiPictoRegular';
+            text-transform: none;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            speak: none;
+            line-height: 1;
+        }
+        .ampstart-navbar-trigger {
+            color: #fff;
+            left: 5px;
+            line-height: 1;
+            position: absolute;
+            top: 5px;
+        }
+        .ampstart-sidebar {
+            background-color: #000;
+            color: #fff;
+            padding: 38px 0 0;
+            width: 100%;
+        }
+        .ampstart-sidebar header {
+            background-color: #000;
+            border: none;
+            color: #fff;
+            font-family: 'adineue_pro_blackregular';
+            font-size: 24px;
+            letter-spacing: 0.9px;
+            line-height: 1;
+            padding: 14px 20px;
+
+        }
+        .ampstart-sidebar header:after {
+            font-family: FontAwesome;
+            content: '\f107';
+            font-size: 20px;
+            vertical-align: middle;
+            padding-left: 3px;
+            position: absolute;
+            top: 50%;
+            margin-top: -10px;
+            right: 20px;
+        }
+        .ampstart-sidebar section[expanded] header {
+            background-color: #ebebeb;
+            color: #000;
+        }
+        .ampstart-sidebar section[expanded] header:after {
+            content: '\f106';
+        }
+        .ampstart-sidebar a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .ampstart-sidebar ul,
+        .ampstart-sidebar li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .ampstart-sidebar .ampstart-dropdown li {
+            border-top: 1px solid #ebebeb;
+            background-color: #fff;
+            font-size: 15px;
+            font-family: 'adineue_pro_lightregular';
+            padding: 14px 20px;
+            line-height: 1;
+        }
+        .ampstart-sidebar .ampstart-dropdown a {
+            color: #000;
+        }
+
+
+
+
+
+        .items,
+        amp-list.items > div {
+            display: flex;
+            justify-content:space-around;
+            flex-wrap: wrap;
+        }
+
+        .main{
+            padding-top: 60px;
+        }
+
+        .main__bc__list{
+            font-size: 0;
+            margin: 10px 20px 5px;
+            padding: 0;
+        }
+
+        .main__bc__item{
+            font-size:12px;
+            color: #000;
+            display: inline-block;
+            list-style: none;
+            margin-right: 10px;
+        }
+
+        .main__bc__item > a{
+            color: #000;
+            text-decoration: none;
+        }
+
+
+        .main__ttl{
+            padding:0 10px;
+            font-size:14px;
+            text-align: left;
+            color: #000;
+            line-height: 1.25;
+            padding: 0px 20px 12px;
+            margin: 0;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .main__other__btn__wrap{
+            margin:10px 20px;
+        }
+
+        .main__other__btn{
+            background-color: #fff;
+            vertical-align: top;
+            position: relative;
+            height: 25px;
+            border: 1px solid #c8cbcc;
+            text-align: right;
+            padding: 5px 24px 6px 7px;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.25;
+            margin-right: 8px;
+            color: #616363;
+            white-space: nowrap;
+            font-size:12px;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+
+        .main__pdts__list{
+
+        }
+
+        .main__pdts__item {
+            flex-grow: 1;
+            flex-shrink: 1;
+            width: 50%;
+            box-sizing: border-box;
+            padding: 0 1px;
+            color: #000;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .main__pdts__info{
+            padding: 5px;
+        }
+
+        .main__pdts__info > .name{
+            margin:0 0 5px;
+            font-size:12px;
+        }
+
+        .main__pdts__info__inr{
+            display: table;
+            width:100%;
+        }
+
+        .main__pdts__info__inr > .star{
+            display: table-cell;
+            text-align: left;
+            vertical-align: middle;
+            font-size: 12px;
+            color: #ffb500;
+        }
+
+        .main__pdts__info__inr > .price{
+            display: table-cell;
+            text-align: right;
+            vertical-align: middle;
+            font-size: 16px;
+            font-weight:bold;
+        }
+
+        .main__view__more{
+            font-size:14px;
+            margin: 20px 10px;
+        }
+        
+        
+        .main__view__more > a{
+            padding:12px 0 10px;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            background-color: #0286cd;
+            display: block;
+        }
+
+        .main__view__more:after{
+
+        }
+
+        .tile {
+            background-color: white;
+            width: 120px;
+            height: 200px;
+            display: block;
+            margin: 8px;
+            -webkit-tap-highlight-color: #eee;
+            max-width: 200px;
+        }
+        @media (max-width: 500px) {
+            .items .tile {
+                width: 150px;
+                height: 200px;
+            }
+        }
+        .tile:active {
+            background-color: #eee;
+        }
+        .tile p {
+            margin: 0;
+            padding: 0 8px;
+            font-size: 14px;
+            line-height:20px;
+        }
+        .tile .name {
+            margin-top: 8px;
+        }
+        .tile .price {
+            margin-bottom: 8px;
+        }
+        .tile .price,
+        .tile .star {
+            color: black;
+        }
+        #hero-images {
+            object-fit: contain;
+        }
+        #hero-images .caption {
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            background: rgba(200, 200, 200, 0.8);
+            color: #333;
+            font-size: 36px;
+            max-height: 30%;
+            font-weight: 300;
+        }
     </style>
 
-
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 </head>
 <body>
-<p>hirayama</p>
-<p>tanabe</p>
-<p>tanabe2</p>
-<h1>Welcome to the mobile web</h1>
-<p>hirayama2</p>
+
+
+<!-- Start Navbar -->
+<header class="ampstart-headerbar">
+    <span role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger">☰</span>
+    <span class="header-item-logo"></span>
+</header>
+
+<!-- Start Sidebar -->
+<amp-sidebar id="header-sidebar" class="ampstart-sidebar" layout="nodisplay">
+    <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger">✕</div>
+    <nav class="ampstart-sidebar-nav">
+        <ul>
+            <li>
+                <amp-accordion layout="container">
+                    <section>
+                        <header>MEN</header>
+                        <ul class="ampstart-dropdown">
+                            <li><a href="#">Styling Tips</a></li>
+                            <li><a href="#">Designers</a></li>
+                        </ul>
+                    </section>
+                </amp-accordion>
+            </li>
+            <li>
+                <amp-accordion layout="container">
+                    <section>
+                        <header>LADIES</header>
+                        <ul class="ampstart-dropdown">
+                            <li><a href="#">Styling Tips</a></li>
+                            <li><a href="#">Designers</a></li>
+                        </ul>
+                    </section>
+                </amp-accordion>
+            </li>
+            <li>
+                <amp-accordion layout="container">
+                    <section>
+                        <header>KIDS</header>
+                        <ul class="ampstart-dropdown">
+                            <li><a href="#">Styling Tips</a></li>
+                            <li><a href="#">Designers</a></li>
+                        </ul>
+                    </section>
+                </amp-accordion>
+            </li>
+            <li>
+                <amp-accordion layout="container">
+                    <section>
+                        <header>カスタマイズ</header>
+                        <ul class="ampstart-dropdown">
+                            <li><a href="#">Styling Tips</a></li>
+                            <li><a href="#">Designers</a></li>
+                        </ul>
+                    </section>
+                </amp-accordion>
+            </li>
+            <li>
+                <amp-accordion layout="container">
+                    <section>
+                        <header>SPORTS</header>
+                        <ul class="ampstart-dropdown">
+                            <li><a href="#">Styling Tips</a></li>
+                            <li><a href="#">Designers</a></li>
+                        </ul>
+                    </section>
+                </amp-accordion>
+            </li>
+            <li>
+                <amp-accordion layout="container">
+                    <section>
+                        <header>BRANDS</header>
+                        <ul class="ampstart-dropdown">
+                            <li><a href="#">Styling Tips</a></li>
+                            <li><a href="#">Designers</a></li>
+                        </ul>
+                    </section>
+                </amp-accordion>
+            </li>
+        </ul>
+    </nav>
+
+    <ul class="ampstart-sidebar-tool">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+
+</amp-sidebar>
+<!-- End Sidebar -->
+<!-- End Navbar -->
+
+<div class="main">
+    <ul class="main__bc__list">
+        <li class="main__bc__item"><a href="">TOP</a></li>
+        <li class="main__bc__item"><a href="">メンズ</a></li>
+    </ul>
+
+    <h2 class="main__ttl font-AH">アディダス メンズ Originals</h2>
+
+    <!--<amp-carousel id="hero-images" width="1024" height="480" layout="responsive" type="slides" autoplay>-->
+        <!--<a href="#">-->
+            <!--<amp-img src="/img/product_hero1_1024x683.jpg" layout="fill" alt="product hero 1" attribution="visualhunt"></amp-img>-->
+            <!--<div class="caption">The 10 best Apples</div>-->
+        <!--</a>-->
+        <!--<a href="#">-->
+            <!--<amp-img src="/img/product_hero2_1024x683.jpg" layout="fill" alt="product hero 2" attribution="visualhunt"></amp-img>-->
+            <!--<div class="caption">So much orange!</div>-->
+        <!--</a>-->
+        <!--<a href="#">-->
+            <!--<amp-img src="/img/product_hero3_1024x683.jpg" layout="fill" alt="product hero 3" attribution="visualhunt"></amp-img>-->
+            <!--<div class="caption">So healthy.</div>-->
+        <!--</a>-->
+    <!--</amp-carousel>-->
+    <div class="main__other__btn__wrap">
+
+        <form method="post"
+              action-xhr="https://ampbyexample.com/components/amp-form/submit-form-xhr" target="_top" class="p2">
+            <div class="">
+                <select name="sort" id="sort" >
+                    <option value="shoes">シューズ</option>
+                    <option value="app">アパレル</option>
+                    <option value="running">ランニング</option>
+                    <option value="eqt">eqt</option>
+                </select>
+                <label for="sort" class="main__other__btn">条件を絞る</label>
+            </div>
+        </form>
+        <form method="post"
+              action-xhr="https://ampbyexample.com/components/amp-form/submit-form-xhr" target="_top" class="p2">
+            <div class="">
+                <select name="filter" id="filter" >
+                    <option value="new">新着順</option>
+                    <option value="fav">人気順</option>
+                    <option value="low">金額が安い順</option>
+                    <option value="high">金額が高い順</option>
+                </select>
+                <label for="filter" class="main__other__btn">順番を変更する</label>
+            </div>
+        </form>
+    </div>
+    <div class="items font-AH main__pdts__list">
+
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/S75075/z-S75075-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス スタンスミス [STAN SMITH]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥15,120</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/BK5921/z-BK5921-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">【adicolor】オリジナルス トラックトップ ジャージ［SST …</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥10,800</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/BY9192/z-BY9192-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス スタンスミス[STAN SMITH CF]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥16,200</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/F76907/z-F76907-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス リュック・バックパック [BP CLASSIC]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥4,860</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/S75075/z-S75075-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス スタンスミス [STAN SMITH]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥15,120</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/BK5921/z-BK5921-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">【adicolor】オリジナルス トラックトップ ジャージ［SST …</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥10,800</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/BY9192/z-BY9192-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス スタンスミス[STAN SMITH CF]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥16,200</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/F76907/z-F76907-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス リュック・バックパック [BP CLASSIC]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥4,860</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/S75075/z-S75075-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス スタンスミス [STAN SMITH]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥15,120</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/BK5921/z-BK5921-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">【adicolor】オリジナルス トラックトップ ジャージ［SST …</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥10,800</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/BY9192/z-BY9192-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス スタンスミス[STAN SMITH CF]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥16,200</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/F76907/z-F76907-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス リュック・バックパック [BP CLASSIC]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥4,860</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/S75075/z-S75075-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス スタンスミス [STAN SMITH]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥15,120</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/BK5921/z-BK5921-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">【adicolor】オリジナルス トラックトップ ジャージ［SST …</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥10,800</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/BY9192/z-BY9192-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス スタンスミス[STAN SMITH CF]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥16,200</p>
+                </div>
+            </div>
+        </a>
+        <a class="m1 item main__pdts__item" href="/samples_templates/product//source">
+            <amp-img width="500"
+                     height="500"
+                     layout="responsive"
+                     alt="Apple"
+                     src="./img/photo/F76907/z-F76907-01.jpg"></amp-img>
+            <div class="main__pdts__info">
+                <p class="name">オリジナルス リュック・バックパック [BP CLASSIC]</p>
+                <div class="main__pdts__info__inr">
+                    <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="price">¥4,860</p>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+
+
+    <div class="main__view__more">
+        <a href="">もっと見る</a>
+    </div>
+
+
+
+    <!--<h3 class="pl1 pt2 pb2">Recommendations</h3>-->
+
+    <!--<amp-carousel class="m1" width="auto" height="160" layout="fixed-height" type="carousel" autoplay>-->
+        <!--<a class="m1" href="#" role="listitem">-->
+            <!--<amp-img width="640" height="426" layout="responsive" alt="Apple" src="/img/product1_640x426.jpg"></amp-img>-->
+            <!--<p class="name">Apple</p>-->
+            <!--<p class="star">★★★★★</p>-->
+            <!--<p class="price">$1.99</p>-->
+        <!--</a><a class="m1" href="#" role="listitem">-->
+        <!--<amp-img width="640" height="426" layout="responsive" alt="Orange" src="/img/product2_640x426.jpg"></amp-img>-->
+        <!--<p class="name">Orange</p>-->
+        <!--<p class="star">★★★★☆</p>-->
+        <!--<p class="price">$0.99</p>-->
+    <!--</a><a class="m1" href="#" role="listitem">-->
+        <!--<amp-img width="640" height="426" layout="responsive" alt="Pear" src="/img/product3_640x426.jpg"></amp-img>-->
+        <!--<p class="name">Pear</p>-->
+        <!--<p class="star">★★★☆☆</p>-->
+        <!--<p class="price">$1.50</p>-->
+    <!--</a><a class="m1" href="#" role="listitem">-->
+        <!--<amp-img width="640" height="426" layout="responsive" alt="Banana" src="/img/product4_640x426.jpg"></amp-img>-->
+        <!--<p class="name">Banana</p>-->
+        <!--<p class="star">★★★★★</p>-->
+        <!--<p class="price">$1.50</p>-->
+    <!--</a>-->
+        <!--<a class="m1" href="#" role="listitem">-->
+            <!--<amp-img width="640" height="426" layout="responsive" alt="Apple" src="/img/product1_640x426.jpg"></amp-img>-->
+            <!--<p class="name">Apple 2</p>-->
+            <!--<p class="star">★★★★★</p>-->
+            <!--<p class="price">$1.99</p>-->
+        <!--</a><a class="m1" href="#" role="listitem">-->
+        <!--<amp-img width="640" height="426" layout="responsive" alt="Orange" src="/img/product2_640x426.jpg"></amp-img>-->
+        <!--<p class="name">Orange 2</p>-->
+        <!--<p class="star">★★★★☆</p>-->
+        <!--<p class="price">$0.99</p>-->
+    <!--</a><a class="m1" href="#" role="listitem">-->
+        <!--<amp-img width="640" height="426" layout="responsive" alt="Pear" src="/img/product3_640x426.jpg"></amp-img>-->
+        <!--<p class="name">Pear 2</p>-->
+        <!--<p class="star">★★★☆☆</p>-->
+        <!--<p class="price">$1.50</p>-->
+    <!--</a><a class="m1" href="#" role="listitem">-->
+        <!--<amp-img width="640" height="426" layout="responsive" alt="Banana" src="/img/product4_640x426.jpg"></amp-img>-->
+        <!--<p class="name">Banana 2</p>-->
+        <!--<p class="star">★★★★★</p>-->
+        <!--<p class="price">$1.50</p>-->
+    <!--</a>-->
+    <!--</amp-carousel>-->
+
+
+
+
+    <amp-analytics type="googleanalytics">
+        <script type="application/json">
+            {
+                "vars": {
+                    "account": "UA-80609902-1"
+                },
+                "triggers": {
+                    "default pageview": {
+                        "on": "visible",
+                        "request": "pageview",
+                        "vars": {
+                            "title": "{{title}}"
+                        }
+                    }
+                }
+            }
+        </script>
+    </amp-analytics>
+
+</div><!--main-->
 </body>
 </html>

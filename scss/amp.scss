@@ -1,4 +1,97 @@
-body{
-  background-color: #f00;
-  font-size:20px;
+$default-fonts: "\0030d2\0030e9\0030ae\0030ce\0089d2\0030b4  Pro W3","Hiragino Kaku Gothic Pro","\0030e1\0030a4\0030ea\0030aa",Meiryo,Osaka,"\00ff2d\00ff33  \00ff30\0030b4\0030b7\0030c3\0030af","MS PGothic",sans-serif;
+
+@font-face{
+  font-family:'adiNeueBold';
+  font-weight:normal;
+  font-style:normal;
+  src:url('/adiamp/fonts/adineue-bold-webfont.ttf') format('truetype');
+}
+@font-face{
+  font-family:'AdiHaus';
+  font-weight:normal;
+  font-style:normal;
+  src:url('/adiamp/fonts/AdiHaus-Regular.ttf') format('truetype');
+}
+@font-face{
+  font-family:'AdiHaus';
+  font-weight:bold;
+  font-style:normal;
+  src:url('/adiamp/fonts/AdiHaus-Bold.ttf') format('truetype');
+}
+@font-face{
+  font-family:'AdiHaus';
+  font-weight:normal;
+  font-style:italic;
+  src:url('/adiamp/fonts/AdiHaus-Italic.ttf') format('truetype');
+}
+@font-face{
+  font-family:'AdiHaus';
+  font-weight:bold;
+  font-style:italic;
+  src:url('/adiamp/fonts/AdiHaus-BoldItalic.ttf') format('truetype');
+}
+
+@font-face{
+  font-family:'adineue_proregular';
+  src:url('/adiamp/fonts/adineuepro-regular-webfont.ttf') format("truetype");
+  font-weight:400;
+  font-style:normal
+}
+@font-face{
+  font-family:'adineue_pro_blackregular';
+  src:url('/adiamp/fonts/adineuepro-black-webfont.ttf') format("truetype");
+  font-weight:400;
+  font-style:normal
+}
+@font-face{
+  font-family:'adineue_pro_boldregular';
+  src:url('/adiamp/fonts/adineuepro-bold-webfont.ttf') format("truetype");
+  font-weight:400;
+  font-style:normal
+}
+@font-face{
+  font-family:'adineue_pro_lightregular';
+  src:url('/adiamp/fonts/adineuepro-light-webfont.ttf') format("truetype");
+  font-weight:400;
+  font-style:normal
+}
+@font-face {
+  font-family:'adihausDIN-regular-italic-cond';
+  src:url("/adiamp/fonts/AdihausDIN-CondIta.ttf") format("truetype");
+  font-weight:400;
+  font-style:normal;
+}
+
+body {
+  font-family: $default-fonts;
+}
+
+.font {
+  &-ANB {
+    font-family: 'adiNeueBold', $default-fonts;
+  }
+
+  &-AH {
+    font-family: 'adiNeueBold', $default-fonts;
+  }
+
+  &-ANP {
+    font-family: 'adineue_proregular', $default-fonts;
+  }
+
+  &-ANP_black {
+    font-family: 'adineue_pro_blackregular', $default-fonts;
+  }
+
+  &-ANP_bold {
+    font-family: 'adineue_pro_boldregular', $default-fonts;
+  }
+
+  &-ANP_light {
+    font-family: 'adineue_pro_lightregular', $default-fonts;
+  }
+
+  &-AHD {
+    font-family: 'adihausDIN-regular-italic-cond', $default-fonts;
+  }
 }
